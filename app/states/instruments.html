@@ -2,18 +2,25 @@
   <h1>{{strum.message}}</h1>
   <div class="instruments">
     <div class="btnContainer">
-      <a class="btn instrumentBtn">Lead</a>
+      <a class="btn instrumentBtn" ng-click="strum.instrumentChoice('lead', $event)" ng-class="{selected: strum.available.lead == false}">Lead</a>
+      <span class="animated fa fa-check"></span>
     </div>
     <div class="btnContainer">
-      <a class="btn instrumentBtn">Rhythm</a>
+      <a class="btn instrumentBtn" ng-click="strum.instrumentChoice('rhythm', $event)" ng-class="{selected: strum.available.lead == false}">Rhythm</a>
+      <span class="animated fa fa-check"></span>
     </div>
   </div>
   <div class="instruments">
     <div class="btnContainer">
-      <a class="btn instrumentBtn">Drums</a>
+      <a class="btn instrumentBtn" ng-click="strum.instrumentChoice('drums', $event)" ng-class="{selected: strum.available.lead == false}">Drums</a>
+      <span class="animated fa fa-check"></span>
     </div>
     <div class="btnContainer">
-      <a class="btn instrumentBtn">Bass</a>
+      <a class="btn instrumentBtn" ng-click="strum.instrumentChoice('bass', $event)" ng-class="{selected: strum.available.lead == false}">Bass</a>
+      <span class="animated fa fa-check"></span>
     </div>
+  </div>
+  <div class="instrumentBtnContainer">
+    <a class="btn playBtn" ng-click="strum.goToInstrument(strum.choice)">Let's Play</a>
   </div>
 </section>

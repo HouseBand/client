@@ -22,4 +22,29 @@ angular.module('houseBand', ['ui.router', 'ngSanitize'])
     templateUrl: './app/states/instruments.html',
     controller: 'StrumCtrl as strum'
   })
+  .state('lead', {
+    url: '/instruments/lead',
+    templateUrl: './app/states/lead.html',
+    controller: 'LeadCtrl as lead'
+  })
+  .state('rhythm', {
+    url: '/instruments/rhythm',
+    templateUrl: './app/states/rhythm.html',
+    controller: 'RhythmCtrl as rhy'
+  })
+  .state('bass', {
+    url: '/instruments/bass',
+    templateUrl: './app/states/bass.html',
+    controller: 'BassCtrl as bass'
+  })
+  .state('drums', {
+    url: '/instruments/drums',
+    templateUrl: './app/states/drums.html',
+    controller: 'DrumsCtrl as drums'
+  })
+
+  io.connect('http://houseband-api.elasticbeanstalk.com', {
+                                                             transports: ['websocket'],
+                                                             'force new connection': true
+                                                         });
 })

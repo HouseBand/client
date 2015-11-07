@@ -1,11 +1,8 @@
 /* instruments custom */
-@import 'bourbon';
-@import 'neat';
-@import 'variables';
-
 #mainInstruments {
   h1 {
     padding-top: 1%;
+    margin-top: 1%;
   }
   .instruments {
     @include outer-container;
@@ -14,17 +11,47 @@
       height: 30vh;
       padding: 5%;
       margin-top: 8%;
+      position: relative;
       .instrumentBtn {
         display: block;
         width: 100%;
         border-radius: 50%;
         height: 100%;
-        background-color: $trans-green;
+        background-color: $green;
         color: white;
         font-size: 5em;
         text-align: center;
         padding-top: 35%;
+        &.selected {
+          box-shadow: inset 0px 0px 0px 10px $yellow;
+        }
+      }
+      span.fa-check {
+        background: $blue;
+        position: absolute;
+        right: 15%;
+        top: 20%;
+        width: 10%;
+        height: 10%;
+        border-radius: 50%;
+        opacity: 0;
+        &.bounceInDown {
+          opacity: 1;
+        }
+        &:before {
+          padding: 0 17%;
+          font-size: 2em;
+          line-height: 1.5em;
+          color: white;
+        }
       }
     }
+  }
+  .instrumentBtnContainer {
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    padding: 2%;
+    width: 100%;
   }
 }
