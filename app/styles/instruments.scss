@@ -1,0 +1,30 @@
+/* instruments custom */
+@import 'bourbon';
+@import 'neat';
+@import 'variables';
+
+#mainInstruments {
+  h1 {
+    padding-top: 1%;
+  }
+  .instruments {
+    @include outer-container;
+    .btnContainer {
+      @include span-columns(6);
+      height: 30vh;
+      padding: 5%;
+      margin-top: 8%;
+      .instrumentBtn {
+        display: block;
+        width: 100%;
+        border-radius: 50%;
+        height: 100%;
+        background-color: $trans-green;
+        color: white;
+        font-size: 5em;
+        text-align: center;
+        padding-top: 35%;
+      }
+    }
+  }
+}

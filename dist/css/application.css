@@ -1,0 +1,100 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+/*----- Colors -----*/
+/*-----END Colors -----*/
+body {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.8); }
+
+h1, h3 {
+  color: white;
+  text-align: center; }
+
+h1 {
+  padding: 10% 2% 0;
+  font-size: 8em;
+  margin-bottom: 0; }
+
+h3 {
+  margin-top: 0;
+  font-size: 3.5em; }
+
+a {
+  text-decoration: none; }
+
+.btn, button {
+  -webkit-appearance: none; }
+
+.container {
+  padding: 2% 5%;
+  height: 100vh;
+  width: 100%; }
+  .container .playBtnContainer {
+    position: absolute;
+    bottom: 20%;
+    left: 0;
+    padding: 2%;
+    width: 100%; }
+    .container .playBtnContainer .playBtn {
+      text-align: center;
+      display: block;
+      padding: 5%;
+      border-radius: 8px;
+      width: 45%;
+      margin: 0 auto;
+      font-size: 3.5em;
+      font-weight: bold;
+      color: white;
+      background: rgba(42, 247, 93, 0.5); }
+  .container .socialLink {
+    padding-top: 20%;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 5em; }
+
+/* instruments custom */
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+/*----- Colors -----*/
+/*-----END Colors -----*/
+#mainInstruments h1 {
+  padding-top: 1%; }
+
+#mainInstruments .instruments {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  #mainInstruments .instruments::after {
+    clear: both;
+    content: "";
+    display: table; }
+  #mainInstruments .instruments .btnContainer {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+    height: 30vh;
+    padding: 5%;
+    margin-top: 8%; }
+    #mainInstruments .instruments .btnContainer:last-child {
+      margin-right: 0; }
+    #mainInstruments .instruments .btnContainer .instrumentBtn {
+      display: block;
+      width: 100%;
+      border-radius: 50%;
+      height: 100%;
+      background-color: rgba(42, 247, 93, 0.5);
+      color: white;
+      font-size: 5em;
+      text-align: center;
+      padding-top: 35%; }
