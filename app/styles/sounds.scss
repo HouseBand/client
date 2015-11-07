@@ -1,0 +1,54 @@
+/* Styles for pads.html */
+#mainLead {
+  background: $blue;
+  width: 100%;
+  height: 100vh;
+}
+#mainRhythm {
+  background: $green;
+  width: 100%;
+  height: 100vh;
+}
+#mainBass {
+  background: $yellow;
+  width: 100%;
+  height: 100vh;
+}
+
+.soundsContainer {
+  .logo {
+    display: block;
+    width: 15%;
+    margin: 0 auto;
+    padding: 3% 2% 2%;
+  }
+  .row {
+    @include row();
+    .btnContainer {
+      @include span-columns(6);
+      height: 24vh;
+      padding: 5% 10%;
+      margin-left: 0.5%;
+      margin-right: 0;
+      .soundsBtn {
+        display: block;
+        width: 100%;
+        border-radius: 50%;
+        height: 100%;
+        color: white;
+        font-size: 4em;
+        text-align: center;
+        padding-top: 35%;
+      }
+      .leadBtn {
+        background-color: $darkBlue;
+      }
+      .bassBtn {
+        background-color: $darkYellow;
+      }
+      .rhythmBtn {
+        background-color: $darkGreen;
+      }
+    }
+  }
+}

@@ -2,7 +2,16 @@
 
 angular.module('houseBand', ['ui.router', 'ngSanitize'])
 
-.config(function($stateProvider, $urlRouterProvider){
+.constant('io', {
+  socket: io.connect('http://houseband-api.elasticbeanstalk.com', {
+                                                             transports: ['websocket'],
+                                                             'force new connection': true
+                                                         })
+})
+
+.config(function($stateProvider, $urlRouterProvider, io){
+
+  io.socket
 
   $urlRouterProvider.otherwise('/play');
 
@@ -42,9 +51,4 @@ angular.module('houseBand', ['ui.router', 'ngSanitize'])
     templateUrl: './app/states/drums.html',
     controller: 'DrumsCtrl as drums'
   })
-
-  io.connect('http://houseband-api.elasticbeanstalk.com', {
-                                                             transports: ['websocket'],
-                                                             'force new connection': true
-                                                         });
-})
+});
