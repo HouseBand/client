@@ -96,9 +96,9 @@ a {
   width: 100%;
   height: 100vh; }
 
-.soundsContainer .logoContainer {
+.logoContainer {
   padding: 3% 0 0; }
-  .soundsContainer .logoContainer .logo {
+  .logoContainer .logo {
     display: block;
     width: 10%;
     margin: 0 auto;
@@ -197,12 +197,23 @@ a {
         line-height: 1.6em;
         color: white; }
 
-#mainInstruments .instrumentBtnContainer {
+.mainBtnContainer {
   position: absolute;
   bottom: 5%;
   left: 0;
   padding: 2%;
   width: 100%; }
+
+/* for name.html */
+#mainBandName .playBtn {
+  padding: 4%; }
+
+#mainBandName .bandNameContainer {
+  color: white;
+  padding-top: 20%; }
+  #mainBandName .bandNameContainer input {
+    padding: 8% 0;
+    width: 100%; }
 
 /* Custom Animations */
 .animated {

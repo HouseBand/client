@@ -17,6 +17,11 @@ angular.module('houseBand', ['ui.router', 'ngSanitize', 'ngTouch'])
     templateUrl: './app/states/home.html',
     controller: 'HomeCtrl as home'
   })
+  .state('name', {
+    url: '/name',
+    templateUrl: './app/states/name.html',
+    controller: 'NameCtrl as name'
+  })
   .state('instruments', {
     url: '/instruments',
     templateUrl: './app/states/instruments.html',
