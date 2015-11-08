@@ -4,9 +4,10 @@
   </div>
   <div class="bandNameContainer">
     <label for="bandName">What's the name of the band?</label>
-    <input type="text" ng-model="name.bandName" id="bandName">
+    <input type="text" ng-model="bandName" id="bandName" min="3" max="15">
+    <span class="maxChars">Maximum 15 Characters</span>
   </div>
   <div class="mainBtnContainer">
-    <a class="btn playBtn" ui-sref="home">Let Em Know</a>
+    <a class="btn playBtn" ng-click="name.roomCheck(bandName)">Let Em Know</a>
   </div>
 </section>

@@ -2,6 +2,12 @@
 
 angular.module('houseBand')
 
-.controller('NameCtrl', function($http){
-  this.bandName = "The JackRabbits"
+.controller('NameCtrl', function($state){
+  this.roomCheck = function(room){
+    if(room){
+      return $state.go('home', {room: room})
+    }
+    alert('Please name your band')
+    return false
+  }
 });

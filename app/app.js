@@ -4,26 +4,26 @@ angular.module('houseBand', ['ui.router', 'ngSanitize', 'ngTouch'])
 
 .config(function($stateProvider, $urlRouterProvider){
 
-  $urlRouterProvider.otherwise('/play');
+  $urlRouterProvider.otherwise('/');
 
   $stateProvider
   .state('play', {
-    url: '/play',
+    url: '/',
     templateUrl: './app/states/play.html',
     controller: 'PlayCtrl as play'
-  })
-  .state('home', {
-    url: '/',
-    templateUrl: './app/states/home.html',
-    controller: 'HomeCtrl as home'
   })
   .state('name', {
     url: '/name',
     templateUrl: './app/states/name.html',
     controller: 'NameCtrl as name'
   })
+  .state('home', {
+    url: '/home/:room',
+    templateUrl: './app/states/home.html',
+    controller: 'HomeCtrl as home'
+  })
   .state('instruments', {
-    url: '/instruments',
+    url: '/instruments/:room',
     templateUrl: './app/states/instruments.html',
     controller: 'StrumCtrl as strum'
   })

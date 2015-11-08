@@ -2,14 +2,16 @@
 
 angular.module('houseBand')
 
-.controller('StrumCtrl', function($http, $state){
+.controller('StrumCtrl', function($http, $state, $stateParams){
   var self = this;
 
   this.message = "Instruments";
   this.choice = '';
+  this.room = $stateParams.room
+  var instrumentsUrl = window.apiConfig.roomUrl + self.room + '/instruments'
 
   // Initial GET to see if anyone else has selected an instrument
-  $http.get('http://houseband-api.elasticbeanstalk.com/instruments').then(function(data){
+  $http.get(instrumentsUrl).then(function(data){
     self.available = data;
   });
 
@@ -17,7 +19,7 @@ angular.module('houseBand')
   this.instrumentChoice = function(instrument, e){
     var target = angular.element(e.target)
     target.toggleClass('selected').next().toggleClass('bounceIn')
-    $http.post('http://houseband-api.elasticbeanstalk.com/instruments/' + instrument).then(function(data){
+    $http.post(instrumentsUrl + '/' + instrument).then(function(data){
       console.log(data)
     });
     self.choice = target.text().toLowerCase();

@@ -30,10 +30,31 @@
 
   <script>
 
-  window.io = io.connect('http://houseband-api.elasticbeanstalk.com', {
-                                                               transports: ['websocket'],
-                                                               'force new connection': true
-                                                           });
+  window.apiConfig = {
+    socketUrl: '//api.housebandgame.com/',
+    roomUrl: '//api.housebandgame.com/rooms/'
+  }
+  function connectToRoom(roomName){
+    window.io = io.connect(window.apiConfig.roomUrl + roomName, {
+                                                             transports: ['websocket'],
+                                                             'force new connection': true
+                                                         });
+   window.apiConfig.fullRoomUrl = apiConfig.roomUrl + roomName
+
+   window.io.on('lead played', function(sound){
+     ion.sound.play(sound)
+   })
+   window.io.on('rhythm played', function(sound){
+     ion.sound.play(sound)
+   })
+   window.io.on('bass played', function(sound){
+     ion.sound.play(sound)
+   })
+   window.io.on('drums played', function(sound){
+     ion.sound.play(sound)
+   })
+  }
+
   //////////////////////////////////////////////
   //
   // Sounds loading in for the pads
@@ -119,19 +140,6 @@
     path: "http://d2zqmd0wvpqk6k.cloudfront.net/audio/",
     preload: true
   });
-
-  window.io.on('lead played', function(sound){
-    ion.sound.play(sound)
-  })
-  window.io.on('rhythm played', function(sound){
-    ion.sound.play(sound)
-  })
-  window.io.on('bass played', function(sound){
-    ion.sound.play(sound)
-  })
-  window.io.on('drums played', function(sound){
-    ion.sound.play(sound)
-  })
   </script>
 
   <script>
