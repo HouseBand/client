@@ -8,6 +8,6 @@ angular.module('houseBand')
   window.io.emit('reserved instrument', 'rhythm');
 
   this.riff = function(number){
-    window.io.emit('play rhythm', 'BH-Rhythm' + number)
+    window.io.emit('play rhythm', 'HAUS128-Rhythm' + number)
   }
 })
