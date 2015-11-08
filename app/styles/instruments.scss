@@ -8,9 +8,9 @@
     @include outer-container;
     .btnContainer {
       @include span-columns(6);
-      height: 29vh;
-      padding: 5%;
-      margin-top: 8%;
+      height: 28vh;
+      padding: 2% 5%;
+      margin-top: 2%;
       position: relative;
       .instrumentBtn {
         display: block;

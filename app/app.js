@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('houseBand', ['ui.router', 'ngSanitize'])
+angular.module('houseBand', ['ui.router', 'ngSanitize', 'ngTouch'])
 
 .config(function($stateProvider, $urlRouterProvider){
 

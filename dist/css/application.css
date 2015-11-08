@@ -62,11 +62,11 @@ a {
 .playBtn {
   text-align: center;
   display: block;
-  padding: 5%;
+  padding: 4% 5%;
   border-radius: 8px;
   width: 45%;
   margin: 0 auto;
-  font-size: 1.5em;
+  font-size: 1.4em;
   font-weight: bold;
   color: white;
   background: #51CB7B; }
@@ -102,7 +102,8 @@ a {
     display: block;
     width: 10%;
     margin: 0 auto;
-    padding: 3% 2%; }
+    padding: 3% 2%;
+    opacity: 0.5; }
 
 .soundsContainer .row {
   display: block; }
@@ -115,8 +116,8 @@ a {
     display: block;
     margin-right: 2.35765%;
     width: 48.82117%;
-    height: 23vh;
-    padding: 5% 10%;
+    height: 24vh;
+    padding: 5% 11%;
     margin-left: 0.5%;
     margin-right: 0; }
     .soundsContainer .row .btnContainer:last-child {
@@ -127,9 +128,12 @@ a {
       border-radius: 50%;
       height: 100%;
       color: white;
-      font-size: 2em;
+      font-size: 1.5em;
       text-align: center;
       padding-top: 35%; }
+
+.soundsContainer .loop {
+  box-shadow: inset 0px 0px 0px 10px white; }
 
 /* Styles for drums.html */
 #mainDrums {
@@ -158,9 +162,9 @@ a {
     display: block;
     margin-right: 2.35765%;
     width: 48.82117%;
-    height: 29vh;
-    padding: 5%;
-    margin-top: 8%;
+    height: 28vh;
+    padding: 2% 5%;
+    margin-top: 2%;
     position: relative; }
     #mainInstruments .instruments .btnContainer:last-child {
       margin-right: 0; }

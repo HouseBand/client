@@ -32,14 +32,15 @@
       width: 10%;
       margin: 0 auto;
       padding: 3% 2%;
+      opacity: 0.5;
     }
   }
   .row {
     @include row();
     .btnContainer {
       @include span-columns(6);
-      height: 23vh;
-      padding: 5% 10%;
+      height: 24vh;
+      padding: 5% 11%;
       margin-left: 0.5%;
       margin-right: 0;
       .soundsBtn {
@@ -48,10 +49,13 @@
         border-radius: 50%;
         height: 100%;
         color: white;
-        font-size: 2em;
+        font-size: 1.5em;
         text-align: center;
         padding-top: 35%;
       }
     }
+  }
+  .loop {
+    box-shadow: inset 0px 0px 0px 10px white; 
   }
 }

@@ -7,8 +7,20 @@ angular.module('houseBand')
 
   window.io.emit('reserved instrument', 'lead');
 
-  this.riff = function(number){
-    window.io.emit('play lead', 'BH-Rhythm' + number)
+  this.riff = function(number, e){
+    var target = angular.element(e.target)
+    if(number === 2){
+      if(target.hasClass('loop')){
+        ion.sound.destroy('BH-Lead' + number)
+        target.removeClass('loop')
+        return false;
+      }
+      else {
+        target.addClass('loop')
+      }
+
+    }
+    window.io.emit('play lead', 'BH-Lead' + number)
   }
 
 })
