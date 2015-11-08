@@ -10,6 +10,8 @@ angular.module('houseBand')
   this.room = $stateParams.room
   var instrumentsUrl = window.apiConfig.roomUrl + self.room + '/instruments'
 
+  connectToRoom(this.room)
+
   // Initial GET to see if anyone else has selected an instrument
   $http.get(instrumentsUrl).then(function(data){
     self.available = data;
