@@ -1,154 +1,148 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="houseBand">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-  <title>House Band</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="dist/css/application.css">
-  <script src="http://houseband-api.elasticbeanstalk.com/socket.io/socket.io.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>House Band</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="dist/css/application.css">
+    <script src="http://houseband-api.elasticbeanstalk.com/socket.io/socket.io.js"></script>
 </head>
 <body>
 
-  <div ui-view></div>
+<div ui-view></div>
 
-  <script src="bower_components/angular/angular.min.js"></script>
-  <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
-  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-  <script src="bower_components/angular-touch/angular-touch.min.js"></script>
-  <script src="bower_components/ion-sound/js/ion.sound.min.js"></script>
-  <script src="app/app.js"></script>
-  <script src="app/controllers/play.controller.js"></script>
-  <script src="app/controllers/home.controller.js"></script>
-  <script src="app/controllers/name.controller.js"></script>
-  <script src="app/controllers/strum.controller.js"></script>
-  <script src="app/controllers/lead.controller.js"></script>
-  <script src="app/controllers/rhythm.controller.js"></script>
-  <script src="app/controllers/bass.controller.js"></script>
-  <script src="app/controllers/drums.controller.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="bower_components/angular-touch/angular-touch.min.js"></script>
+<script src="bower_components/ion-sound/js/ion.sound.min.js"></script>
+<script src="app/app.js"></script>
+<script src="app/controllers/play.controller.js"></script>
+<script src="app/controllers/home.controller.js"></script>
+<script src="app/controllers/name.controller.js"></script>
+<script src="app/controllers/strum.controller.js"></script>
+<script src="app/controllers/lead.controller.js"></script>
+<script src="app/controllers/rhythm.controller.js"></script>
+<script src="app/controllers/bass.controller.js"></script>
+<script src="app/controllers/drums.controller.js"></script>
 
-  <script>
+<script>
 
-  window.apiConfig = {
-    socketUrl: '//api.housebandgame.com/',
-    roomUrl: '//api.housebandgame.com/rooms/'
-  };
-  function connectToRoom(roomName) {
-      window.io = io.connect(window.apiConfig.roomUrl + roomName, {
-          transports: ['websocket'],
-          'force new connection': true
-      });
-      window.apiConfig.fullRoomUrl = apiConfig.roomUrl + roomName;
+    var nonLoop = [
+        'HAUS128-Lead1',
+        'HAUS128-Lead2',
+        'HAUS128-Lead3',
+        'LEM130-Lead1',
+        'LEM130-Lead2',
+        'LEM130-Lead3',
+        'LEM130-Lead4'
+    ];
 
-      window.io.on('lead played', function (sound) {
-          ion.sound.play(sound);
-      });
-      window.io.on('rhythm played', function (sound) {
-          ion.sound.play(sound);
-      });
-      window.io.on('bass played', function (sound) {
-          ion.sound.play(sound);
-      });
-      window.io.on('drums played', function (sound) {
-          ion.sound.play(sound);
-      });
-  }
+    var loop = [
+        'HAUS128-Bass1',
+        'HAUS128-Bass2',
+        'HAUS128-Bass3',
+        'HAUS128-Bass4',
+        'HAUS128-Bass5',
+        'HAUS128-Bass6',
+        'HAUS128-Drum1',
+        'HAUS128-Drum2',
+        'HAUS128-Drum3',
+        'HAUS128-Drum4',
+        'HAUS128-Drum5',
+        'HAUS128-Drum6',
+        'HAUS128-Lead4',
+        'HAUS128-Lead5',
+        'HAUS128-Lead6',
+        'HAUS128-Rhythm1',
+        'HAUS128-Rhythm2',
+        'HAUS128-Rhythm3',
+        'HAUS128-Rhythm4',
+        'HAUS128-Rhythm5',
+        'HAUS128-Rhythm6',
+        'LEM130-Bass1',
+        'LEM130-Bass2',
+        'LEM130-Bass3',
+        'LEM130-Bass4',
+        'LEM130-Bass5',
+        'LEM130-Bass6',
+        'LEM130-Drum1',
+        'LEM130-Drum2',
+        'LEM130-Drum3',
+        'LEM130-Drum4',
+        'LEM130-Drum5',
+        'LEM130-Drum6',
+        'LEM130-Lead5',
+        'LEM130-Lead6',
+        'LEM130-Rhythm1',
+        'LEM130-Rhythm2',
+        'LEM130-Rhythm3',
+        'LEM130-Rhythm4',
+        'LEM130-Rhythm5',
+        'LEM130-Rhythm6'
+    ];
 
-  //////////////////////////////////////////////
-  //
-  // Sounds loading in for the pads
-  //
-  //////////////////////////////////////////////
-  ion.sound({
-    sounds: [
-        {
-            name: "BH-Bass1"
-        },
-        {
-            name: "BH-Bass2"
-        },
-        {
-            name: "BH-Bass3"
-        },
-        {
-            name: "BH-Bass4"
-        },
-        {
-            name: "BH-Bass5"
-        },
-        {
-            name: "BH-Bass6"
-        },
-        {
-            name: "BH-Lead1",
-        },
-        {
-            name: "BH-Lead2",
-            loop: true
-        },
-        {
-            name: "BH-Lead3",
-        },
-        {
-            name: "BH-Lead4",
-        },
-        {
-            name: "BH-Lead5",
-        },
-        {
-            name: "BH-Lead6",
-        },
-        {
-            name: "BH-Rhythm1"
-        },
-        {
-            name: "BH-Rhythm2"
-        },
-        {
-            name: "BH-Rhythm3"
-        },
-        {
-            name: "BH-Rhythm4"
-        },
-        {
-            name: "BH-Rhythm5"
-        },
-        {
-            name: "BH-Rhythm6"
-        },
-        {
-            name: "BH-Hat"
-        },
-        {
-            name: "BH-Kick"
-        },
-        {
-            name: "BH-Ride"
-        },
-        {
-            name: "BH-SFX1"
-        },
-        {
-            name: "BH-SFX2"
-        },
-        {
-            name: "BH-Snare"
-        },
-    ],
-    volume: 0.5,
-    path: "http://d2zqmd0wvpqk6k.cloudfront.net/audio/",
-    preload: true
-  });
-  </script>
+    window.audioConfig = {
+        loop: loop,
+        nonLoop: nonLoop
+    };
+    ion.sound({
+        sounds: [].concat(nonLoop.map(function(file) {
+            return {
+                name: file
+            };
+        }), loop.map(function(file) {
+            return {
+                name: file,
+                loop: true
+            }
+        })),
+        path: "http://www.housebandgame.com/audio/",
+        preload: true
+    });
 
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-69846001-1', 'auto');
-  ga('send', 'pageview');
+    window.apiConfig = {
+        socketUrl: '//api.housebandgame.com/',
+        roomUrl: '//api.housebandgame.com/rooms/'
+    };
+    function connectToRoom(roomName) {
+        window.io = io.connect(window.apiConfig.roomUrl + roomName, {
+            transports: ['websocket'],
+            'force new connection': true
+        });
+        window.apiConfig.fullRoomUrl = apiConfig.roomUrl + roomName;
+
+        window.io.on('lead played', function (sound) {
+            ion.sound.play(sound);
+        });
+        window.io.on('rhythm played', function (sound) {
+            ion.sound.play(sound);
+        });
+        window.io.on('bass played', function (sound) {
+            ion.sound.play(sound);
+        });
+        window.io.on('drums played', function (sound) {
+            ion.sound.play(sound);
+        });
+    }
+</script>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-69846001-1', 'auto');
+    ga('send', 'pageview');
 </script>
 </body>
 </html>
