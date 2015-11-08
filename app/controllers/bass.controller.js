@@ -29,7 +29,7 @@ angular.module('houseBand')
   };
 
   this.quit = function(){
-    window.socket.disconnet();
+    window.socket.disconnect();
     $state.go('play')
   }
 });
