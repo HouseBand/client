@@ -113,7 +113,9 @@
             'force new connection': true
         });
         window.apiConfig.fullRoomUrl = apiConfig.roomUrl + roomName;
-
+    }
+    window.socketsSetup = false;
+    function setupSocket() {
         var instruments = [
             'lead', 'rhythm', 'bass', 'drums'
         ];
@@ -126,6 +128,7 @@
                 ion.sound.stop(sound);
             });
         });
+        window.socketsSetup = true;
     }
 </script>
 
