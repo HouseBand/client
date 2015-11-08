@@ -44,6 +44,7 @@ angular.module('houseBand')
         };
 
         this.goToInstrument = function (instrument) {
+            window.setupSocket();
             if (instrument !== '') {
                 $state.go(instrument, {room: self.room})
             }
