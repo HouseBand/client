@@ -3,5 +3,5 @@
 angular.module('houseBand')
 
 .controller('PlayCtrl', function(){
-  this.message = "Mix it Up"
+  this.message = "Jam with Friends"
 })
