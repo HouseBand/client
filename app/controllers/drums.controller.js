@@ -5,6 +5,10 @@ angular.module('houseBand')
 .controller('DrumsCtrl', function(){
   this.message = "Mix it Up";
 
+  if (!window.socket) {
+    window.connectToRoom($stateParams.room);
+  }
+
   window.io.emit('reserved instrument', 'drums');
 
   this.riff = function(number) {

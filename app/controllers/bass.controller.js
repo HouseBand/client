@@ -3,7 +3,11 @@
 angular.module('houseBand')
 
 .controller('BassCtrl', function(){
-  this.message = "Mix it Up"
+  this.message = "Mix it Up";
+
+  if (!window.socket) {
+    window.connectToRoom($stateParams.room);
+  }
 
   window.io.emit('reserved instrument', 'bass');
 

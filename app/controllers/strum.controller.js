@@ -16,7 +16,7 @@ angular.module('houseBand')
   });
 
   connectToRoom(this.room);
-  window.io.on('instruments changed', function(data) {
+  window.socket.on('instruments changed', function(data) {
     self.available = data;
   });
 

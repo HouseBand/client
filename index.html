@@ -7,7 +7,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="dist/css/application.css">
-    <script src="http://houseband-api.elasticbeanstalk.com/socket.io/socket.io.js"></script>
+    <script src="//api.housebandgame.com/socket.io/socket.io.js"></script>
 </head>
 <body>
 
@@ -89,40 +89,40 @@
         nonLoop: nonLoop
     };
     ion.sound({
-        sounds: [].concat(nonLoop.map(function(file) {
+        sounds: [].concat(nonLoop.map(function (file) {
             return {
                 name: file
             };
-        }), loop.map(function(file) {
+        }), loop.map(function (file) {
             return {
                 name: file,
                 loop: true
             }
         })),
-        path: "http://www.housebandgame.com/audio/",
+        path: "//www.housebandgame.com/audio/",
         preload: true
     });
 
     window.apiConfig = {
-        socketUrl: '//api.housebandgame.com/',
+        socketUrl: 'http://api.housebandgame.com/',
         roomUrl: '//api.housebandgame.com/rooms/'
     };
     function connectToRoom(roomName) {
-        window.io = io.connect(window.apiConfig.roomUrl + roomName, {
+        window.socket = window.io.connect(window.apiConfig.socketUrl + roomName, {
             transports: ['websocket'],
             'force new connection': true
         });
         window.apiConfig.fullRoomUrl = apiConfig.roomUrl + roomName;
 
         var instruments = [
-                'lead', 'rhythm', 'bass', 'drums'
+            'lead', 'rhythm', 'bass', 'drums'
         ];
 
-        instruments.forEach(function(instrument) {
-            window.io.on(instrument + ' played', function (sound) {
+        instruments.forEach(function (instrument) {
+            window.socket.on(instrument + ' played', function (sound) {
                 ion.sound.play(sound);
             });
-            window.io.on(instrument + ' stopped', function (sound) {
+            window.socket.on(instrument + ' stopped', function (sound) {
                 ion.sound.stop(sound);
             });
         });
