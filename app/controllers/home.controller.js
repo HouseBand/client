@@ -7,11 +7,13 @@ angular.module('houseBand')
   this.message = "Home"
 
   this.room = $stateParams.room
+  var newRoom = window.apiConfig.roomUrl + this.room;
+  var instrumentsRoom = "http:" + newRoom + '/instruments'
 
-  $http.post(window.apiConfig.roomUrl + this.room).then(function(data){
+  $http.post(newRoom).then(function(data){
     console.log(data)
   });
 
-  this.shareLinkChrome = $sce.trustAsHtml("<a href='sms:?body=Lets%20Mix%20it%20Up'>Share from Chrome</a>")
-  this.shareLinkiOS = $sce.trustAsHtml("<a href='sms:&body=Lets%20Mix%20it%20Up'>Share from iOS</a>")
+  this.shareLinkChrome = $sce.trustAsHtml("<a class='btn shareBtn' href='sms:?body=Lets%20Mix%20it%20Up%0A%0A" + instrumentsRoom +  "'>Share from Android</a>")
+  this.shareLinkiOS = $sce.trustAsHtml("<a class='btn shareBtn' href='sms:&body=Lets%20Mix%20it%20Up%0A%0A" + instrumentsRoom +"'>Share from iOS</a>")
 });

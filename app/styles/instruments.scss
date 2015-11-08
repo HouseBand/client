@@ -1,15 +1,18 @@
 /* instruments custom */
 #mainInstruments {
-  h1 {
+  h4 {
     padding-top: 1%;
-    margin-top: 1%;
+    margin: 1% 0;
+  }
+  .logo {
+    width: 15%;
   }
   .instruments {
     @include outer-container;
     .btnContainer {
       @include span-columns(6);
       height: 28vh;
-      padding: 2% 5%;
+      padding: 2% 5% 3%;
       margin-top: 2%;
       position: relative;
       .instrumentBtn {
@@ -20,7 +23,10 @@
         color: white;
         font-size: 2em;
         text-align: center;
-        padding-top: 35%;
+        padding-top: 25%;
+        img {
+          width: 50%;
+        }
         &.selected {
           box-shadow: inset 0px 0px 0px 10px $yellow;
         }
@@ -47,6 +53,24 @@
       }
     }
   }
+  .instrumentLabel {
+    color: white;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.leadBtn {
+  background-color: $darkBlue;
+  img {
+    margin-top: 5%;
+  }
+}
+.bassBtn {
+  background-color: $darkYellow;
+}
+.rhythmBtn {
+  background-color: $darkGreen;
 }
 
 // Global

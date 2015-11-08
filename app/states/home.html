@@ -6,8 +6,8 @@
   <h3>{{home.room}}</h3>
   <p>Get 2 to 4 people together and start jammin'</p>
   <div class="socialLink">
-    <p><i ng-bind-html="home.shareLinkChrome"></i></p>
-    <p><i ng-bind-html="home.shareLinkiOS"></i></p>
+    <p><span ng-bind-html="home.shareLinkChrome"></span></p>
+    <p><span ng-bind-html="home.shareLinkiOS"></span></p>
   </div>
   <div class="playBtnContainer">
     <a class="btn playBtn" ui-sref="instruments({room: home.room})">Start Now</a>

@@ -2,25 +2,37 @@
   <div class="logoContainer">
     <img class="logo" src="./app/assets/images/triangle.svg" alt="">
   </div>
-  <h1>{{strum.message}}</h1>
+  <h4>Choose your weapon!</h4>
   <div class="instruments">
     <div class="btnContainer">
-      <a class="btn instrumentBtn leadBtn" ng-click="strum.instrumentChoice('lead', $event)" ng-class="{selected: strum.available.lead == false}">Lead</a>
+      <a class="btn instrumentBtn leadBtn" ng-click="strum.instrumentChoice('lead', $event)" ng-class="{selected: strum.available.lead == false}">
+        <img src="./app/assets/images/icons/Keyboard.png" alt="">
+      </a>
       <span class="animated fa fa-check"></span>
+      <p class="instrumentLabel">Lead</p>
     </div>
     <div class="btnContainer">
-      <a class="btn instrumentBtn rhythmBtn" ng-click="strum.instrumentChoice('rhythm', $event)" ng-class="{selected: strum.available.lead == false}">Rhythm</a>
+      <a class="btn instrumentBtn rhythmBtn" ng-click="strum.instrumentChoice('rhythm', $event)" ng-class="{selected: strum.available.lead == false}">
+        <img src="./app/assets/images/icons/Record.png" alt="">
+      </a>
       <span class="animated fa fa-check"></span>
+      <p class="instrumentLabel">Rhythm</p>
     </div>
   </div>
   <div class="instruments">
     <div class="btnContainer">
-      <a class="btn instrumentBtn drumsBtn" ng-click="strum.instrumentChoice('drums', $event)" ng-class="{selected: strum.available.lead == false}">Drums</a>
+      <a class="btn instrumentBtn drumsBtn" ng-click="strum.instrumentChoice('drums', $event)" ng-class="{selected: strum.available.lead == false}">
+        <img src="./app/assets/images/icons/Drum.png" alt="">
+      </a>
       <span class="animated fa fa-check"></span>
+      <p class="instrumentLabel">Drums</p>
     </div>
     <div class="btnContainer">
-      <a class="btn instrumentBtn bassBtn" ng-click="strum.instrumentChoice('bass', $event)" ng-class="{selected: strum.available.lead == false}">Bass</a>
+      <a class="btn instrumentBtn bassBtn" ng-click="strum.instrumentChoice('bass', $event)" ng-class="{selected: strum.available.lead == false}">
+        <img src="./app/assets/images/icons/Bass.png" alt="">
+      </a>
       <span class="animated fa fa-check"></span>
+      <p class="instrumentLabel">Bass</p>
     </div>
   </div>
   <div class="mainBtnContainer">
