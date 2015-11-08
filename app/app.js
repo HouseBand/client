@@ -28,22 +28,22 @@ angular.module('houseBand', ['ui.router', 'ngSanitize', 'ngTouch'])
     controller: 'StrumCtrl as strum'
   })
   .state('lead', {
-    url: '/instruments/lead',
+    url: '/rooms/:room/instruments/lead',
     templateUrl: './app/states/lead.html',
     controller: 'LeadCtrl as lead'
   })
   .state('rhythm', {
-    url: '/instruments/rhythm',
+    url: '/rooms/:room/instruments/rhythm',
     templateUrl: './app/states/rhythm.html',
     controller: 'RhythmCtrl as rhy'
   })
   .state('bass', {
-    url: '/instruments/bass',
+    url: '/rooms/:room/instruments/bass',
     templateUrl: './app/states/bass.html',
     controller: 'BassCtrl as bass'
   })
   .state('drums', {
-    url: '/instruments/drums',
+    url: '/rooms/:room/instruments/drums',
     templateUrl: './app/states/drums.html',
     controller: 'DrumsCtrl as drums'
   })

@@ -29,7 +29,7 @@ angular.module('houseBand')
 
   this.goToInstrument = function(instrument){
     if(instrument !== ''){
-      $state.go(instrument)
+      $state.go(instrument, {room: self.room})
     }
     else {
       alert('Oops, Please select an instrument')
