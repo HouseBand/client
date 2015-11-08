@@ -53,11 +53,12 @@ a {
     padding: 2%;
     width: 100%; }
   .container .socialLink {
-    padding-top: 20%;
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
     text-align: center;
-    font-size: 2em; }
+    font-size: 1.4em; }
+    .container .socialLink a {
+      color: white; }
 
 .playBtn {
   text-align: center;
@@ -70,6 +71,22 @@ a {
   font-weight: bold;
   color: white;
   background: #51CB7B; }
+
+#mainHome .logo {
+  width: 20%;
+  margin-bottom: 4%; }
+
+#mainHome h4 {
+  font-size: 1.3em; }
+
+#mainHome h3 {
+  color: #817DB3;
+  margin-bottom: 0; }
+
+#mainHome p {
+  margin-top: 0;
+  text-align: center;
+  color: white; }
 
 /* Styles for pads.html */
 .leadBtn {
@@ -206,7 +223,8 @@ a {
 
 /* for name.html */
 #mainBandName .playBtn {
-  padding: 4%; }
+  padding: 4% 2%;
+  width: 50%; }
 
 #mainBandName .logo {
   width: 18%; }

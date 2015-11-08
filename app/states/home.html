@@ -2,10 +2,12 @@
   <div class="logoContainer">
     <img class="logo" src="./app/assets/images/triangle.svg" alt="">
   </div>
-  <h1>{{home.message}}</h1>
+  <h4>Sweet Name!</h4>
+  <h3>{{home.room}}</h3>
+  <p>Get 2 to 4 people together and start jammin'</p>
   <div class="socialLink">
-    <i ng-bind-html="home.shareLinkChrome"></i>
-    <i ng-bind-html="home.shareLinkiOS"></i>
+    <p><i ng-bind-html="home.shareLinkChrome"></i></p>
+    <p><i ng-bind-html="home.shareLinkiOS"></i></p>
   </div>
   <div class="playBtnContainer">
     <a class="btn playBtn" ui-sref="instruments({room: home.room})">Start Now</a>
