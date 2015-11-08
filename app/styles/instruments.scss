@@ -26,21 +26,22 @@
         }
       }
       span.fa-check {
-        background: $blue;
+        background: $green;
         position: absolute;
-        right: 15%;
-        top: 20%;
-        width: 10%;
-        height: 10%;
+        right: 8%;
+        top: 10%;
+        width: 25%;
+        height: 27%;
         border-radius: 50%;
         opacity: 0;
+        box-shadow: 0 0 8px $trans-black;
         &.bounceInDown {
           opacity: 1;
         }
         &:before {
           padding: 0 20%;
-          font-size: 0.8em;
-          line-height: 1.2em;
+          font-size: 1.5em;
+          line-height: 1.6em;
           color: white;
         }
       }
