@@ -33,26 +33,26 @@
   window.apiConfig = {
     socketUrl: '//api.housebandgame.com/',
     roomUrl: '//api.housebandgame.com/rooms/'
-  }
-  function connectToRoom(roomName){
-    window.io = io.connect(window.apiConfig.roomUrl + roomName, {
-                                                             transports: ['websocket'],
-                                                             'force new connection': true
-                                                         });
-   window.apiConfig.fullRoomUrl = apiConfig.roomUrl + roomName
+  };
+  function connectToRoom(roomName) {
+      window.io = io.connect(window.apiConfig.roomUrl + roomName, {
+          transports: ['websocket'],
+          'force new connection': true
+      });
+      window.apiConfig.fullRoomUrl = apiConfig.roomUrl + roomName;
 
-   window.io.on('lead played', function(sound){
-     ion.sound.play(sound)
-   })
-   window.io.on('rhythm played', function(sound){
-     ion.sound.play(sound)
-   })
-   window.io.on('bass played', function(sound){
-     ion.sound.play(sound)
-   })
-   window.io.on('drums played', function(sound){
-     ion.sound.play(sound)
-   })
+      window.io.on('lead played', function (sound) {
+          ion.sound.play(sound);
+      });
+      window.io.on('rhythm played', function (sound) {
+          ion.sound.play(sound);
+      });
+      window.io.on('bass played', function (sound) {
+          ion.sound.play(sound);
+      });
+      window.io.on('drums played', function (sound) {
+          ion.sound.play(sound);
+      });
   }
 
   //////////////////////////////////////////////
