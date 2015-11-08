@@ -16,7 +16,7 @@ angular.module('houseBand')
   // POST to the server to select an instrument
   this.instrumentChoice = function(instrument, e){
     var target = angular.element(e.target)
-    target.toggleClass('selected').next().toggleClass('bounceInDown')
+    target.toggleClass('selected').next().toggleClass('bounceIn')
     $http.post('http://houseband-api.elasticbeanstalk.com/instruments/' + instrument).then(function(data){
       console.log(data)
     });
