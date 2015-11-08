@@ -114,17 +114,17 @@
         });
         window.apiConfig.fullRoomUrl = apiConfig.roomUrl + roomName;
 
-        window.io.on('lead played', function (sound) {
-            ion.sound.play(sound);
-        });
-        window.io.on('rhythm played', function (sound) {
-            ion.sound.play(sound);
-        });
-        window.io.on('bass played', function (sound) {
-            ion.sound.play(sound);
-        });
-        window.io.on('drums played', function (sound) {
-            ion.sound.play(sound);
+        var instruments = [
+                'lead', 'rhythm', 'bass', 'drums'
+        ];
+
+        instruments.forEach(function(instrument) {
+            window.io.on(instrument + ' played', function (sound) {
+                ion.sound.play(sound);
+            });
+            window.io.on(instrument + ' stopped', function (sound) {
+                ion.sound.stop(sound);
+            });
         });
     }
 </script>
