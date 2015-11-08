@@ -2,7 +2,7 @@
 
 angular.module('houseBand')
 
-.controller('BassCtrl', function(){
+.controller('BassCtrl', function($stateParams){
   this.message = "Mix it Up";
 
   if (!window.socket) {
@@ -11,7 +11,20 @@ angular.module('houseBand')
 
   window.io.emit('reserved instrument', 'bass');
 
-  this.riff = function(number){
-    window.io.emit('play bass', 'HAUS128-Bass' + number)
-  }
+  this.riff = function (number, e) {
+    var target = angular.element(e.target);
+    var soundName = 'HAUS128-Bass' + number;
+
+    if (window.audioConfig.nonLoop.indexOf(soundName) < 0) {
+      if (target.hasClass('loop')) {
+        target.removeClass('loop');
+        window.socket.emit('stop bass', soundName);
+      } else {
+        target.addClass('loop');
+        window.socket.emit('play bass', soundName);
+      }
+    } else {
+      window.socket.emit('play bass', soundName);
+    }
+  };
 });
