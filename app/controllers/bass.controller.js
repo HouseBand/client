@@ -9,7 +9,7 @@ angular.module('houseBand')
     window.connectToRoom($stateParams.room);
   }
 
-  window.io.emit('reserved instrument', 'bass');
+  window.socket.emit('reserved instrument', 'bass');
 
   this.riff = function (number, e) {
     var target = angular.element(e.target);
