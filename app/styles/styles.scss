@@ -50,6 +50,12 @@ a {
     margin: 0 auto;
     text-align: center;
     font-size: 1.4em;
+    @include media(992px) {
+      margin: 5% auto;
+      p {
+        margin-bottom: 5%;
+      }
+    }
     a {
       color: white;
     }
@@ -74,6 +80,12 @@ a {
   .logo {
     width: 20%;
     margin-bottom: 4%;
+    @include media(992px) {
+      margin-top: 0;
+      margin-bottom: 0;
+      width: 10%;
+    }
+
   }
   h4 {
     font-size: 1.3em;
@@ -90,6 +102,13 @@ a {
   }
   .playBtnContainer {
     bottom: 10%;
+    .playBtn {
+      @include media(992px) {
+        padding: 2% 2%;
+        width: 20%;
+        font-size: 1.5em;
+      }
+    }
   }
   .shareBtn {
     background: rgba(250,250,250,0.4);
@@ -102,11 +121,21 @@ a {
   .logo {
     margin-top: 5%;
     width: 20%;
+    @include media(992px) {
+      margin-top: 0;
+      width: 10%;
+    }
   }
   h1 {
     margin-top: 0;
+    @include media(992px) {
+      padding-top: 2%;
+    }
     img {
       width: 85%;
+      @include media(992px) {
+        width: 30%;
+      }
     }
   }
   h3 {
@@ -114,5 +143,12 @@ a {
   }
   .playBtnContainer {
     bottom: 10%;
+    .playBtn {
+      @include media(992px) {
+        padding: 2% 2%;
+        width: 20%;
+        font-size: 1.5em;
+      }
+    }
   }
 }

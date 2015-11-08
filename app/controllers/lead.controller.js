@@ -2,7 +2,7 @@
 
 angular.module('houseBand')
 
-    .controller('LeadCtrl', function ($stateParams) {
+    .controller('LeadCtrl', function ($stateParams, $state) {
         this.message = "Mix it Up";
 
         if (!window.socket) {

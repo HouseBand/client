@@ -3,9 +3,19 @@
   h4 {
     padding-top: 1%;
     margin: 1% 0;
+    @include media(992px) {
+      margin: 0;
+      font-size: 1.5em;
+    }
   }
   .logo {
     width: 15%;
+    @include media(992px) {
+      margin-top: 0;
+      margin-bottom: 0;
+      width: 10%;
+      padding-bottom: 0;
+    }
   }
   .instruments {
     @include outer-container;
@@ -15,6 +25,10 @@
       padding: 2% 5% 3%;
       margin-top: 2%;
       position: relative;
+      @include media(992px) {
+        height: 25vh;
+        padding: 0 15%;
+      }
       .instrumentBtn {
         display: block;
         width: 100%;
@@ -41,6 +55,10 @@
         border-radius: 50%;
         opacity: 0;
         box-shadow: 0 0 8px $trans-black;
+        @include media(992px) {
+          right: 30%;
+          width: 10%;
+        }
         &.bounceInDown {
           opacity: 1;
         }
@@ -49,6 +67,10 @@
           font-size: 1.5em;
           line-height: 1.6em;
           color: white;
+          @include media(992px) {
+            font-size: 2em;
+            line-height: 1.8em;
+          }
         }
       }
     }
@@ -57,6 +79,13 @@
     color: white;
     margin: 0;
     text-align: center;
+  }
+  .playBtn {
+    @include media(992px) {
+      padding: 2% 2%;
+      width: 20%;
+      font-size: 1.5em;
+    }
   }
 }
 
@@ -80,4 +109,13 @@
   left: 0;
   padding: 2%;
   width: 100%;
+}
+
+.logoContainer {
+  @include media(992px) {
+    padding-top: 0;
+    .logo {
+      padding-bottom: 1%;
+    }
+  }
 }

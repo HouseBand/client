@@ -57,6 +57,11 @@ a {
     margin: 0 auto;
     text-align: center;
     font-size: 1.4em; }
+    @media screen and (min-width: 992px) {
+      .container .socialLink {
+        margin: 5% auto; }
+        .container .socialLink p {
+          margin-bottom: 5%; } }
     .container .socialLink a {
       color: white; }
 
@@ -75,6 +80,11 @@ a {
 #mainHome .logo {
   width: 20%;
   margin-bottom: 4%; }
+  @media screen and (min-width: 992px) {
+    #mainHome .logo {
+      margin-top: 0;
+      margin-bottom: 0;
+      width: 10%; } }
 
 #mainHome h4 {
   font-size: 1.3em; }
@@ -91,6 +101,11 @@ a {
 
 #mainHome .playBtnContainer {
   bottom: 10%; }
+  @media screen and (min-width: 992px) {
+    #mainHome .playBtnContainer .playBtn {
+      padding: 2% 2%;
+      width: 20%;
+      font-size: 1.5em; } }
 
 #mainHome .shareBtn {
   background: rgba(250, 250, 250, 0.4);
@@ -100,17 +115,32 @@ a {
 #mainPlay .logo {
   margin-top: 5%;
   width: 20%; }
+  @media screen and (min-width: 992px) {
+    #mainPlay .logo {
+      margin-top: 0;
+      width: 10%; } }
 
 #mainPlay h1 {
   margin-top: 0; }
+  @media screen and (min-width: 992px) {
+    #mainPlay h1 {
+      padding-top: 2%; } }
   #mainPlay h1 img {
     width: 85%; }
+    @media screen and (min-width: 992px) {
+      #mainPlay h1 img {
+        width: 30%; } }
 
 #mainPlay h3 {
   font-size: 1.2em; }
 
 #mainPlay .playBtnContainer {
   bottom: 10%; }
+  @media screen and (min-width: 992px) {
+    #mainPlay .playBtnContainer .playBtn {
+      padding: 2% 2%;
+      width: 20%;
+      font-size: 1.5em; } }
 
 /* Styles for pads.html */
 #mainLead {
@@ -154,6 +184,10 @@ a {
     margin-right: 0; }
     .soundsContainer .row .btnContainer:last-child {
       margin-right: 0; }
+    @media screen and (min-width: 992px) {
+      .soundsContainer .row .btnContainer {
+        height: 20vh;
+        padding: 1% 20%; } }
     .soundsContainer .row .btnContainer .soundsBtn {
       display: block;
       width: 100%;
@@ -170,7 +204,8 @@ a {
 .quitTheBand {
   text-align: center; }
   .quitTheBand a {
-    color: white; }
+    color: white;
+    cursor: pointer; }
 
 /* Styles for drums.html */
 #mainDrums {
@@ -185,9 +220,19 @@ a {
 #mainInstruments h4 {
   padding-top: 1%;
   margin: 1% 0; }
+  @media screen and (min-width: 992px) {
+    #mainInstruments h4 {
+      margin: 0;
+      font-size: 1.5em; } }
 
 #mainInstruments .logo {
   width: 15%; }
+  @media screen and (min-width: 992px) {
+    #mainInstruments .logo {
+      margin-top: 0;
+      margin-bottom: 0;
+      width: 10%;
+      padding-bottom: 0; } }
 
 #mainInstruments .instruments {
   max-width: 68em;
@@ -208,6 +253,10 @@ a {
     position: relative; }
     #mainInstruments .instruments .btnContainer:last-child {
       margin-right: 0; }
+    @media screen and (min-width: 992px) {
+      #mainInstruments .instruments .btnContainer {
+        height: 25vh;
+        padding: 0 15%; } }
     #mainInstruments .instruments .btnContainer .instrumentBtn {
       display: block;
       width: 100%;
@@ -231,6 +280,10 @@ a {
       border-radius: 50%;
       opacity: 0;
       box-shadow: 0 0 8px rgba(0, 0, 0, 0.8); }
+      @media screen and (min-width: 992px) {
+        #mainInstruments .instruments .btnContainer span.fa-check {
+          right: 30%;
+          width: 10%; } }
       #mainInstruments .instruments .btnContainer span.fa-check.bounceInDown {
         opacity: 1; }
       #mainInstruments .instruments .btnContainer span.fa-check:before {
@@ -238,11 +291,21 @@ a {
         font-size: 1.5em;
         line-height: 1.6em;
         color: white; }
+        @media screen and (min-width: 992px) {
+          #mainInstruments .instruments .btnContainer span.fa-check:before {
+            font-size: 2em;
+            line-height: 1.8em; } }
 
 #mainInstruments .instrumentLabel {
   color: white;
   margin: 0;
   text-align: center; }
+
+@media screen and (min-width: 992px) {
+  #mainInstruments .playBtn {
+    padding: 2% 2%;
+    width: 20%;
+    font-size: 1.5em; } }
 
 .leadBtn {
   background-color: #0073E6; }
@@ -262,17 +325,36 @@ a {
   padding: 2%;
   width: 100%; }
 
+@media screen and (min-width: 992px) {
+  .logoContainer {
+    padding-top: 0; }
+    .logoContainer .logo {
+      padding-bottom: 1%; } }
+
 /* for name.html */
 #mainBandName .playBtn {
   padding: 4% 2%;
   width: 50%; }
+  @media screen and (min-width: 992px) {
+    #mainBandName .playBtn {
+      padding: 2% 2%;
+      width: 20%;
+      font-size: 1.5em; } }
 
 #mainBandName .logo {
   width: 18%; }
+  @media screen and (min-width: 992px) {
+    #mainBandName .logo {
+      margin-top: 0;
+      width: 10%; } }
 
 #mainBandName .bandNameContainer {
   color: white;
   padding: 20% 5% 0; }
+  @media screen and (min-width: 992px) {
+    #mainBandName .bandNameContainer {
+      padding: 1% 5% 0;
+      text-align: center; } }
   #mainBandName .bandNameContainer input {
     margin-top: 5%;
     padding: 7% 2%;
@@ -281,6 +363,12 @@ a {
     width: 100%;
     background: rgba(255, 255, 255, 0.3);
     color: white; }
+    @media screen and (min-width: 992px) {
+      #mainBandName .bandNameContainer input {
+        padding: 2%;
+        display: block;
+        width: 50%;
+        margin: 5% auto 0; } }
   #mainBandName .bandNameContainer .maxChars {
     color: rgba(150, 150, 150, 0.5); }
 
