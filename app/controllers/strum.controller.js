@@ -43,6 +43,10 @@ angular.module('houseBand')
             }
         };
 
+        this.instrumentImage = function(){
+          angular.element(this).parent().click();
+        };
+
         this.goToInstrument = function (instrument) {
             window.setupSocket();
             if (instrument !== '') {
