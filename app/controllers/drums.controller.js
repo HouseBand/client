@@ -2,7 +2,7 @@
 
 angular.module('houseBand')
 
-.controller('DrumsCtrl', function($stateParams){
+.controller('DrumsCtrl', function($stateParams, $state){
   this.message = "Mix it Up";
 
   if (!window.socket) {
@@ -27,4 +27,9 @@ angular.module('houseBand')
       window.socket.emit('play drums', soundName);
     }
   };
+
+  this.quit = function(){
+    window.socket.disconnet();
+    $state.go('play')
+  }
 });

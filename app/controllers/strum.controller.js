@@ -27,7 +27,7 @@ angular.module('houseBand')
     $http.post(instrumentsUrl + '/' + instrument).then(function(data){
       console.log(data)
     });
-    self.choice = target.text().toLowerCase();
+    self.choice = target.next().next().text().toLowerCase();
   };
 
   this.goToInstrument = function(instrument){

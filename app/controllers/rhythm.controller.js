@@ -27,4 +27,9 @@ angular.module('houseBand')
       window.socket.emit('play rhythm', soundName);
     }
   };
+
+  this.quit = function(){
+    window.socket.disconnet();
+    $state.go('play')
+  }
 });
