@@ -14,16 +14,16 @@ h1, h3, h4 {
 }
 h1 {
   padding: 10% 2% 0;
-  font-size: 8em;
+  font-size: 3em;
   margin-bottom: 0;
 }
 h3 {
   margin-top: 0;
-  font-size: 3.5em;
+  font-size: 2.5em;
 }
 h4 {
   margin: 0;
-  font-size: 2.5em;
+  padding-bottom: 1%;
 }
 
 a {
@@ -50,7 +50,7 @@ a {
     width: 70%;
     margin: 0 auto;
     text-align: center;
-    font-size: 5em;
+    font-size: 2em;
   }
 }
 
@@ -61,7 +61,7 @@ a {
   border-radius: 8px;
   width: 45%;
   margin: 0 auto;
-  font-size: 3.5em;
+  font-size: 1.5em;
   font-weight: bold;
   color: white;
   background: $green;

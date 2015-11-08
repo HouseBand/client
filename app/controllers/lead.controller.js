@@ -2,15 +2,13 @@
 
 angular.module('houseBand')
 
-.controller('LeadCtrl', function(io){
+.controller('LeadCtrl', function(){
   this.message = "Mix it Up"
 
-  io.socket.emit('reserved instrument', 'lead');
-  io.socket.on('lead played', function(data){
-    console.log(data)
-  })
+  window.io.emit('reserved instrument', 'lead');
 
   this.riff = function(number){
-    io.socket.emit('play lead', 'riff' + number)
+    window.io.emit('play lead', 'BH-Rhythm' + number)
   }
+
 })

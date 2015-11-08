@@ -8,7 +8,7 @@
     @include outer-container;
     .btnContainer {
       @include span-columns(6);
-      height: 30vh;
+      height: 29vh;
       padding: 5%;
       margin-top: 8%;
       position: relative;
@@ -17,9 +17,8 @@
         width: 100%;
         border-radius: 50%;
         height: 100%;
-        background-color: $green;
         color: white;
-        font-size: 5em;
+        font-size: 2em;
         text-align: center;
         padding-top: 35%;
         &.selected {
@@ -39,9 +38,9 @@
           opacity: 1;
         }
         &:before {
-          padding: 0 17%;
-          font-size: 2em;
-          line-height: 1.5em;
+          padding: 0 20%;
+          font-size: 0.8em;
+          line-height: 1.2em;
           color: white;
         }
       }

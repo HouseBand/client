@@ -2,15 +2,12 @@
 
 angular.module('houseBand')
 
-.controller('RhythmCtrl', function(io){
+.controller('RhythmCtrl', function(){
   this.message = "Mix it Up"
 
-  io.socket.emit('reserved instrument', 'rhythm');
-  io.socket.on('rhythm played', function(data){
-    console.log(data)
-  })
+  window.io.emit('reserved instrument', 'rhythm');
 
   this.riff = function(number){
-    io.socket.emit('play rhythm', 'riff' + number)
+    window.io.emit('play rhythm', 'BH-Rhythm' + number)
   }
 })

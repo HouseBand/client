@@ -25,16 +25,16 @@ h1, h3, h4 {
 
 h1 {
   padding: 10% 2% 0;
-  font-size: 8em;
+  font-size: 3em;
   margin-bottom: 0; }
 
 h3 {
   margin-top: 0;
-  font-size: 3.5em; }
+  font-size: 2.5em; }
 
 h4 {
   margin: 0;
-  font-size: 2.5em; }
+  padding-bottom: 1%; }
 
 a {
   text-decoration: none; }
@@ -57,7 +57,7 @@ a {
     width: 70%;
     margin: 0 auto;
     text-align: center;
-    font-size: 5em; }
+    font-size: 2em; }
 
 .playBtn {
   text-align: center;
@@ -66,10 +66,79 @@ a {
   border-radius: 8px;
   width: 45%;
   margin: 0 auto;
-  font-size: 3.5em;
+  font-size: 1.5em;
   font-weight: bold;
   color: white;
   background: #51CB7B; }
+
+/* Styles for pads.html */
+.leadBtn {
+  background-color: #0073E6; }
+
+.bassBtn {
+  background-color: #E6BF00; }
+
+.rhythmBtn {
+  background-color: #48B36B; }
+
+#mainLead {
+  background: #0081FF;
+  width: 100%;
+  height: 100vh; }
+
+#mainRhythm {
+  background: #51CB7B;
+  width: 100%;
+  height: 100vh; }
+
+#mainBass {
+  background: #FFD400;
+  width: 100%;
+  height: 100vh; }
+
+.soundsContainer .logoContainer {
+  padding: 3% 0 0; }
+  .soundsContainer .logoContainer .logo {
+    display: block;
+    width: 10%;
+    margin: 0 auto;
+    padding: 3% 2%; }
+
+.soundsContainer .row {
+  display: block; }
+  .soundsContainer .row::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .soundsContainer .row .btnContainer {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+    height: 23vh;
+    padding: 5% 10%;
+    margin-left: 0.5%;
+    margin-right: 0; }
+    .soundsContainer .row .btnContainer:last-child {
+      margin-right: 0; }
+    .soundsContainer .row .btnContainer .soundsBtn {
+      display: block;
+      width: 100%;
+      border-radius: 50%;
+      height: 100%;
+      color: white;
+      font-size: 2em;
+      text-align: center;
+      padding-top: 35%; }
+
+/* Styles for drums.html */
+#mainDrums {
+  background: #FA5965;
+  width: 100%;
+  height: 100vh; }
+
+.drumsBtn {
+  background-color: #E5505D; }
 
 /* instruments custom */
 #mainInstruments h1 {
@@ -89,7 +158,7 @@ a {
     display: block;
     margin-right: 2.35765%;
     width: 48.82117%;
-    height: 30vh;
+    height: 29vh;
     padding: 5%;
     margin-top: 8%;
     position: relative; }
@@ -100,9 +169,8 @@ a {
       width: 100%;
       border-radius: 50%;
       height: 100%;
-      background-color: #51CB7B;
       color: white;
-      font-size: 5em;
+      font-size: 2em;
       text-align: center;
       padding-top: 35%; }
       #mainInstruments .instruments .btnContainer .instrumentBtn.selected {
@@ -119,9 +187,9 @@ a {
       #mainInstruments .instruments .btnContainer span.fa-check.bounceInDown {
         opacity: 1; }
       #mainInstruments .instruments .btnContainer span.fa-check:before {
-        padding: 0 17%;
-        font-size: 2em;
-        line-height: 1.5em;
+        padding: 0 20%;
+        font-size: 0.8em;
+        line-height: 1.2em;
         color: white; }
 
 #mainInstruments .instrumentBtnContainer {
@@ -185,67 +253,3 @@ a {
 .bounceInDown {
   -webkit-animation-name: bounceInDown;
   animation-name: bounceInDown; }
-
-/* Styles for pads.html */
-#mainLead {
-  background: #0081FF;
-  width: 100%;
-  height: 100vh; }
-
-#mainRhythm {
-  background: #51CB7B;
-  width: 100%;
-  height: 100vh; }
-
-#mainBass {
-  background: #FFD400;
-  width: 100%;
-  height: 100vh; }
-
-.soundsContainer .logo {
-  display: block;
-  width: 15%;
-  margin: 0 auto;
-  padding: 3% 2% 2%; }
-
-.soundsContainer .row {
-  display: block; }
-  .soundsContainer .row::after {
-    clear: both;
-    content: "";
-    display: table; }
-  .soundsContainer .row .btnContainer {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%;
-    height: 24vh;
-    padding: 5% 10%;
-    margin-left: 0.5%;
-    margin-right: 0; }
-    .soundsContainer .row .btnContainer:last-child {
-      margin-right: 0; }
-    .soundsContainer .row .btnContainer .soundsBtn {
-      display: block;
-      width: 100%;
-      border-radius: 50%;
-      height: 100%;
-      color: white;
-      font-size: 4em;
-      text-align: center;
-      padding-top: 35%; }
-    .soundsContainer .row .btnContainer .leadBtn {
-      background-color: #0073E6; }
-    .soundsContainer .row .btnContainer .bassBtn {
-      background-color: #E6BF00; }
-    .soundsContainer .row .btnContainer .rhythmBtn {
-      background-color: #48B36B; }
-
-/* Styles for drums.html */
-#mainDrums {
-  background: #FA5965;
-  width: 100%;
-  height: 100vh; }
-
-.drumsBtn {
-  background-color: #E5505D; }

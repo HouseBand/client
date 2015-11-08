@@ -2,16 +2,7 @@
 
 angular.module('houseBand', ['ui.router', 'ngSanitize'])
 
-.constant('io', {
-  socket: io.connect('http://houseband-api.elasticbeanstalk.com', {
-                                                             transports: ['websocket'],
-                                                             'force new connection': true
-                                                         })
-})
-
-.config(function($stateProvider, $urlRouterProvider, io){
-
-  io.socket
+.config(function($stateProvider, $urlRouterProvider){
 
   $urlRouterProvider.otherwise('/play');
 
