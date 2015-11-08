@@ -7,8 +7,7 @@ angular.module('houseBand')
   this.message = "Home"
 
   this.room = $stateParams.room
-  var newRoom = window.apiConfig.roomUrl + this.room;
-  this.instrumentsRoom = "http:" + newRoom + '/instruments'
+  this.instrumentsRoom = 'http://www.housebandgame.com/#/instruments/' + this.room;
 
   $http.post(newRoom).then(function(data){
     console.log(data)
