@@ -9,11 +9,11 @@ angular.module('houseBand')
     window.connectToRoom($stateParams.room);
   }
 
-  window.io.emit('reserved instrument', 'drums');
+  window.socket.emit('reserved instrument', 'drums');
 
   this.riff = function (number, e) {
     var target = angular.element(e.target);
-    var soundName = 'HAUS128-Drums' + number;
+    var soundName = 'HAUS128-Drum' + number;
 
     if (window.audioConfig.nonLoop.indexOf(soundName) < 0) {
       if (target.hasClass('loop')) {
