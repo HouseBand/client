@@ -2,25 +2,39 @@
 
 angular.module('houseBand')
 
-.controller('LeadCtrl', function(){
-  this.message = "Mix it Up"
+    .controller('LeadCtrl', function ($stateParams, $state) {
+        this.message = "Mix it Up";
 
-  window.io.emit('reserved instrument', 'lead');
+        if (!window.socket) {
+            window.connectToRoom($stateParams.room);
+        }
 
-  this.riff = function(number, e){
-    var target = angular.element(e.target)
-    if(number === 2){
-      if(target.hasClass('loop')){
-        ion.sound.destroy('BH-Lead' + number)
-        target.removeClass('loop')
-        return false;
-      }
-      else {
-        target.addClass('loop')
-      }
+        if (!window.socketsSetup) {
+            window.setupSocket();
+        }
 
-    }
-    window.io.emit('play lead', 'BH-Lead' + number)
-  }
+        window.socket.emit('reserved instrument', 'lead');
 
-})
+        this.riff = function (number, e) {
+            var target = angular.element(e.target);
+            var soundName = 'HAUS128-Lead' + number;
+
+            if (window.audioConfig.nonLoop.indexOf(soundName) < 0) {
+                if (target.hasClass('loop')) {
+                    target.removeClass('loop');
+                    window.socket.emit('stop lead', soundName);
+                } else {
+                    target.addClass('loop');
+                    window.socket.emit('play lead', soundName);
+                }
+            } else {
+                window.socket.emit('play lead', soundName);
+            }
+        }
+
+        this.quit = function(){
+          window.socket.disconnect();
+          $state.go('play')
+        }
+
+    });

@@ -1,13 +1,4 @@
 /* Styles for pads.html */
-.leadBtn {
-  background-color: $darkBlue;
-}
-.bassBtn {
-  background-color: $darkYellow;
-}
-.rhythmBtn {
-  background-color: $darkGreen;
-}
 #mainLead {
   background: $blue;
   width: 100%;
@@ -24,17 +15,18 @@
   height: 100vh;
 }
 
-.soundsContainer {
-  .logoContainer {
-    padding: 3% 0 0;
-    .logo {
-      display: block;
-      width: 10%;
-      margin: 0 auto;
-      padding: 3% 2%;
-      opacity: 0.5;
-    }
+.logoContainer {
+  padding: 3% 0 0;
+  .logo {
+    display: block;
+    width: 10%;
+    margin: 0 auto;
+    padding: 3% 2%;
+    opacity: 0.5;
   }
+}
+
+.soundsContainer {
   .row {
     @include row();
     .btnContainer {
@@ -43,12 +35,16 @@
       padding: 5% 11%;
       margin-left: 0.5%;
       margin-right: 0;
+      @include media(992px) {
+        height: 20vh;
+        padding: 1% 20%;
+      }
       .soundsBtn {
         display: block;
         width: 100%;
         border-radius: 50%;
         height: 100%;
-        color: white;
+        color: rgba(0,0,0,0.3);
         font-size: 1.5em;
         text-align: center;
         padding-top: 35%;
@@ -56,6 +52,14 @@
     }
   }
   .loop {
-    box-shadow: inset 0px 0px 0px 10px white; 
+    box-shadow: inset 0px 0px 0px 10px white;
+  }
+}
+
+.quitTheBand {
+  text-align: center;
+  a {
+    color: white;
+    cursor: pointer;
   }
 }

@@ -2,30 +2,38 @@
 
 angular.module('houseBand')
 
-.controller('DrumsCtrl', function(){
-  this.message = "Mix it Up"
+.controller('DrumsCtrl', function($stateParams, $state){
+  this.message = "Mix it Up";
 
-  window.io.emit('reserved instrument', 'drums');
+  if (!window.socket) {
+    window.connectToRoom($stateParams.room);
+  }
 
-  this.kick = function(e){
-    if(e){
-      e.preventDefault();
+  if (!window.socketsSetup) {
+    window.setupSocket();
+  }
+
+  window.socket.emit('reserved instrument', 'drums');
+
+  this.riff = function (number, e) {
+    var target = angular.element(e.target);
+    var soundName = 'HAUS128-Drum' + number;
+
+    if (window.audioConfig.nonLoop.indexOf(soundName) < 0) {
+      if (target.hasClass('loop')) {
+        target.removeClass('loop');
+        window.socket.emit('stop drums', soundName);
+      } else {
+        target.addClass('loop');
+        window.socket.emit('play drums', soundName);
+      }
+    } else {
+      window.socket.emit('play drums', soundName);
     }
-    window.io.emit('play drums', 'BH-Kick')
+  };
+
+  this.quit = function(){
+    window.socket.disconnect();
+    $state.go('play')
   }
-  this.hat = function(){
-    window.io.emit('play lead', 'BH-Hat')
-  }
-  this.sfx1 = function(){
-    window.io.emit('play lead', 'BH-SFX1')
-  }
-  this.sfx2 = function(){
-    window.io.emit('play lead', 'BH-SFX2')
-  }
-  this.snare = function(){
-    window.io.emit('play lead', 'BH-Snare')
-  }
-  this.ride = function(){
-    window.io.emit('play lead', 'BH-Ride')
-  }
-})
+});

@@ -1,0 +1,45 @@
+/* for name.html */
+#mainBandName {
+  .playBtn {
+    padding: 4% 2%;
+    width: 50%;
+    @include media(992px) {
+      padding: 2% 2%;
+      width: 20%;
+      font-size: 1.5em;
+    }
+  }
+  .logo {
+    width: 18%;
+    @include media(992px) {
+      margin-top: 0;
+      width: 10%;
+    }
+  }
+  .bandNameContainer {
+    color: white;
+    padding: 20% 5% 0;
+    @include media(992px) {
+      padding: 1% 5% 0;
+      text-align: center;
+    }
+    input {
+      margin-top: 5%;
+      padding: 7% 2%;
+      text-align: center;
+      font-size: 1.3em;
+      width: 100%;
+      background: rgba(255,255,255,0.3);
+      color: white;
+      @include media(992px) {
+        padding: 2%;
+        display: block;
+        width: 50%;
+        margin: 5% auto 0;
+      }
+    }
+    .maxChars {
+      color: rgba(150,150,150,0.5);
+    }
+  }
+}

@@ -5,26 +5,29 @@
   <h4>Ok, ok lets face it, you got the best instrument</h4>
   <div class="row">
     <div class="btnContainer">
-      <a href="" class="btn drumsBtn soundsBtn" ng-click="drums.kick()" ng-dblclick="drums.kick($event)">Kick</a>
+      <a href="" class="btn drumsBtn soundsBtn" ng-click="drums.riff(1, $event)">Riff 1</a>
     </div>
     <div class="btnContainer">
-      <a href="" class="btn drumsBtn soundsBtn" ng-click="drums.snare()">Snare</a>
+      <a href="" class="btn drumsBtn soundsBtn" ng-click="drums.riff(2, $event)">Riff 2</a>
     </div>
   </div>
   <div class="row">
     <div class="btnContainer">
-      <a href="" class="btn drumsBtn soundsBtn" ng-click="drums.hat()">Hat</a>
+      <a href="" class="btn drumsBtn soundsBtn" ng-click="drums.riff(3, $event)">Riff 3</a>
     </div>
     <div class="btnContainer">
-      <a href="" class="btn drumsBtn soundsBtn" ng-click="drums.ride()">Ride</a>
+      <a href="" class="btn drumsBtn soundsBtn" ng-click="drums.riff(4, $event)">Riff 4</a>
     </div>
   </div>
   <div class="row">
     <div class="btnContainer">
-      <a href="" class="btn drumsBtn soundsBtn" ng-click="drums.sfx1()">SFX1</a>
+      <a href="" class="btn drumsBtn soundsBtn" ng-click="drums.riff(5, $event)">Riff 5</a>
     </div>
     <div class="btnContainer">
-      <a href="" class="btn drumsBtn soundsBtn" ng-click="drums.sfx2()">SFX2</a>
+      <a href="" class="btn drumsBtn soundsBtn" ng-click="drums.riff(6, $event)">Riff 6</a>
     </div>
+  </div>
+  <div class="quitTheBand">
+    <a class="quit" ng-click="drums.quit()">Quit The Band!</a>
   </div>
 </section>

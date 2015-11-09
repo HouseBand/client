@@ -1,0 +1,13 @@
+<section id="mainBandName" class="container">
+  <div class="logoContainer">
+    <img class="logo" src="./app/assets/images/triangle.svg" alt="">
+  </div>
+  <div class="bandNameContainer">
+    <label for="bandName">What's the name of the band?</label>
+    <input type="text" ng-model="bandName" id="bandName" min="3" max="15">
+    <span class="maxChars">Maximum 15 Characters</span>
+  </div>
+  <div class="mainBtnContainer">
+    <a class="btn playBtn" ng-click="name.roomCheck(bandName)">Let Em Know</a>
+  </div>
+</section>

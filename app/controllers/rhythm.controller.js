@@ -2,12 +2,38 @@
 
 angular.module('houseBand')
 
-.controller('RhythmCtrl', function(){
-  this.message = "Mix it Up"
+.controller('RhythmCtrl', function($stateParams, $state){
+  this.message = "Mix it Up";
 
-  window.io.emit('reserved instrument', 'rhythm');
-
-  this.riff = function(number){
-    window.io.emit('play rhythm', 'BH-Rhythm' + number)
+  if (!window.socket) {
+    window.connectToRoom($stateParams.room);
   }
-})
+
+  if (!window.socketsSetup) {
+    window.setupSocket();
+  }
+
+  window.socket.emit('reserved instrument', 'rhythm');
+
+  this.riff = function (number, e) {
+    var target = angular.element(e.target);
+    var soundName = 'HAUS128-Rhythm' + number;
+
+    if (window.audioConfig.nonLoop.indexOf(soundName) < 0) {
+      if (target.hasClass('loop')) {
+        target.removeClass('loop');
+        window.socket.emit('stop rhythm', soundName);
+      } else {
+        target.addClass('loop');
+        window.socket.emit('play rhythm', soundName);
+      }
+    } else {
+      window.socket.emit('play rhythm', soundName);
+    }
+  };
+
+  this.quit = function(){
+    window.socket.disconnect();
+    $state.go('play')
+  }
+});

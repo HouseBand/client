@@ -1,26 +1,41 @@
 <section id="mainInstruments">
-  <h1>{{strum.message}}</h1>
+  <div class="logoContainer">
+    <img class="logo" src="./app/assets/images/triangle.svg" alt="">
+  </div>
+  <h4>Choose your weapon!</h4>
   <div class="instruments">
     <div class="btnContainer">
-      <a class="btn instrumentBtn leadBtn" ng-click="strum.instrumentChoice('lead', $event)" ng-class="{selected: strum.available.lead == false}">Lead</a>
-      <span class="animated fa fa-check"></span>
+      <a class="btn instrumentBtn leadBtn bounceIn bounceOut" ng-click="strum.instrumentChoice('lead')" ng-class="{selected: !!strum.available.lead}">
+        <img src="./app/assets/images/icons/Keyboard.png" alt="">
+      </a>
+      <span class="animated fa fa-check" ng-class="{bounceIn: !!strum.available.lead}"></span>
+      <p class="instrumentLabel">Lead</p>
     </div>
     <div class="btnContainer">
-      <a class="btn instrumentBtn rhythmBtn" ng-click="strum.instrumentChoice('rhythm', $event)" ng-class="{selected: strum.available.lead == false}">Rhythm</a>
-      <span class="animated fa fa-check"></span>
+      <a class="btn instrumentBtn rhythmBtn" ng-click="strum.instrumentChoice('rhythm')" ng-class="{selected: !!strum.available.rhythm}">
+        <img src="./app/assets/images/icons/Record.png" alt="">
+      </a>
+      <span class="animated fa fa-check" ng-class="{bounceIn: !!strum.available.rhythm}"></span>
+      <p class="instrumentLabel">Rhythm</p>
     </div>
   </div>
   <div class="instruments">
     <div class="btnContainer">
-      <a class="btn instrumentBtn drumsBtn" ng-click="strum.instrumentChoice('drums', $event)" ng-class="{selected: strum.available.lead == false}">Drums</a>
-      <span class="animated fa fa-check"></span>
+      <a class="btn instrumentBtn drumsBtn" ng-click="strum.instrumentChoice('drums')" ng-class="{selected: !!strum.available.drums}">
+        <img src="./app/assets/images/icons/Drum.png" alt="">
+      </a>
+      <span class="animated fa fa-check" ng-class="{bounceIn: !!strum.available.drums}"></span>
+      <p class="instrumentLabel">Drums</p>
     </div>
     <div class="btnContainer">
-      <a class="btn instrumentBtn bassBtn" ng-click="strum.instrumentChoice('bass', $event)" ng-class="{selected: strum.available.lead == false}">Bass</a>
-      <span class="animated fa fa-check"></span>
+      <a class="btn instrumentBtn bassBtn" ng-click="strum.instrumentChoice('bass')" ng-class="{selected: !!strum.available.bass}">
+        <img src="./app/assets/images/icons/Bass.png" alt="">
+      </a>
+      <span class="animated fa fa-check" ng-class="{bounceIn: !!strum.available.bass}"></span>
+      <p class="instrumentLabel">Bass</p>
     </div>
   </div>
-  <div class="instrumentBtnContainer">
+  <div class="mainBtnContainer">
     <a class="btn playBtn" ng-click="strum.goToInstrument(strum.choice)">Let's Play</a>
   </div>
 </section>
