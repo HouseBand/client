@@ -4,12 +4,12 @@ angular.module('houseBand')
 
 .controller('HomeCtrl', function($sce, $stateParams, $http){
   var self = this;
-  this.message = "Home"
+  this.message = "Home";
 
-  this.room = $stateParams.room
+  this.room = $stateParams.room;
   this.instrumentsRoom = 'http://www.housebandgame.com/#/instruments/' + this.room;
 
-  $http.post(newRoom).then(function(data){
+  $http.post('http://api.housebandgame.com/rooms/' + this.room).then(function(data){
     console.log(data)
   });
 
